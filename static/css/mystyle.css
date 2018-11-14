@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,300,500|Noto+Sans:400,700');
+
+body {
+	font-family:'Roboto'
+}
+
+table {
+	border-collapse: collapse;
+
+}
+
+th {
+    border: 1px solid #ffffff;
+    background-color:#153466;
+    color: #ffffff;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+tr {
+	border: 1px solid #ffffff;
+    border-collapse: collapse;
+}
+
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+td.red {
+	color: #8E1A14;
+	background-color: #F6C9D0;
+	font-weight: bold;
+}
+
+td.yellow {
+	color: #955C20;
+	background-color: #FBEBA5;
+	font-weight: bold;
+}
+
+td.green {
+	color: #295E17;
+	background-color: #CCEED1;
+	font-weight: bold;
+}
+
+td.blue {
+	color: #0000FF;
+	background-color: #DAE1F2;
+	font-weight: bold;
+}

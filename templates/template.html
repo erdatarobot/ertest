@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CFDS Call Shadowing Report v2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="/static/css/mystyle.css" />
+    <link rel="icon" type="image/png" href="https://3gp10c1vpy442j63me73gy3s-wpengine.netdna-ssl.com/wp-content/uploads/fbrfg/favicon-32x32.png" sizes="32x32">   
+  </head>
+  <body>
+      <h1>CFDS Active Call Shadowing Report v2</h1>
+      <p><b>Note to Auditors:</b>
+      <ol>
+        <li>You are expected to audit no fewer than 4 calls for each of the participants for which you are listed as auditor</li>
+        <li>Each time you audit, please give a 1-5 score for the quality of the audit in column S on the "Form Responses 1" sheet</li> 
+      </ol>
+      <h1>Audit Spreadsheet is <a href="https://docs.google.com/spreadsheets/d/1JrT-RQUs4ohRYtdKBCrCcvGY48xFez3QZopYuuAL3oc/edit#gid=1295897443">here</a></h1>
+
+      <p><b>Auditing Rubric [Score. Description]</b></p>
+      <ol>
+        <li>"This shadow was merely an exercise in checking the box. Notes were incomplete and it's not clear that the CFDS paid attention."</li>
+        <li>"This shadow was only marginally better than having not done one at all. Notes were present but uninformative."</li>
+        <li>"Adequate effort was put into this shadow, notes prove that the CFDS paid attention."</li>
+        <li>"Above average effort went into this, it's clear that both CFDS met prior to the call and afterwards. Good job."</li>
+        <li>"I would use this shadow as an example of the best possible effort. Great work."</li>
+      </ol>
+
+      <h1>Current Status</h1>
+      <table>
+        {% for row in myTable %}
+        <TR>
+          {% if loop.index == 1 %} 
+            {% for column in row %}
+              <TH>{{ column }}</TH>
+            {% endfor %}
+          {% else %}
+            {% for column in row %}
+              <TD
+                {% if column == 'RED' %}
+                  CLASS='red'
+                {% elif column == 'YELLOW' %}
+                  CLASS='yellow'
+                {% elif column == 'GREEN' %}
+                  CLASS='green'
+                {% elif column == 'BLUE' %}
+                  CLASS='blue'
+                {% endif %}
+              >
+                {{ column }}
+              </TD>
+            {% endfor %}
+          {% endif %}
+        </TR>
+        {% endfor %}
+      </table>
+
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
